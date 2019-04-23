@@ -1,0 +1,10 @@
+#! /bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
+# Clone ceph-ansible and apply proxy patch
+KUBESPRAY=$DIR/../target/kubespray
+rm -rf KUBESPRAY
+git clone https://github.com/kubernetes-sigs/kubespray.git $KUBESPRAY
+cd $KUBESPRAY
+git checkout $KUBESPRAY_VERSION

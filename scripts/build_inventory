@@ -1,0 +1,11 @@
+#! /bin/bash
+
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
+echo "Cleaning up project..."
+mkdir -p  target/kubespray/inventory/netcup
+cp -r target/kubespray/inventory/sample/* target/kubespray/inventory/netcup/
+declare -a IPS=(185.183.159.201)
+CONFIG_FILE=target/kubespray/inventory/netcup/hosts.ini python3 target/kubespray/contrib/inventory_builder/inventory.py ${IPS[@]}

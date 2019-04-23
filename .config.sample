@@ -1,0 +1,15 @@
+# The version of kubespray, kubectl and helm to use
+KUBESPRAY_VERSION=v2.8.2
+
+KUBECTL_VERSION=v1.13.3
+
+HELM_VERSION=v2.13.0
+
+# The secrets key to use for decrypting secrets
+SECRETS_KEY=s3cr3t
+
+# kube host ip
+K8S_HOST=10.10.10.10
+
+# kube host ssh port
+SSH_HOST=22
